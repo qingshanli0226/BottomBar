@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <RadioGroup android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:id="@+id/bottomGroup">
+
+        <RadioButton android:layout_width="0dp"
+                     android:layout_height="match_parent"
+                     android:layout_weight="1"
+                     android:drawableTop="@drawable/ic_launcher_background"
+                     android:id="@+id/home"
+                     android:text="@string/home"
+                     android:button="@null"
+                     android:gravity="center"
+        />
+        <RadioButton android:layout_width="0dp"
+                     android:layout_height="match_parent"
+                     android:layout_weight="1"
+                     android:drawableTop="@drawable/ic_launcher_background"
+                     android:id="@+id/type"
+                     android:text="@string/type"
+                     android:button="@null"
+                     android:gravity="center"
+        />
+        <RadioButton android:layout_width="0dp"
+                     android:layout_height="match_parent"
+                     android:layout_weight="1"
+                     android:drawableTop="@drawable/ic_launcher_background"
+                     android:id="@+id/shoppingCar"
+                     android:text="@string/shopping_car"
+                     android:button="@null"
+                     android:gravity="center"
+        />
+        <RadioButton android:layout_width="0dp"
+                     android:layout_height="match_parent"
+                     android:layout_weight="1"
+                     android:drawableTop="@drawable/ic_launcher_background"
+                     android:id="@+id/mine"
+                     android:text="@string/mine"
+                     android:button="@null"
+                     android:gravity="center"
+        />
+
+    </RadioGroup>
+
+</LinearLayout>
