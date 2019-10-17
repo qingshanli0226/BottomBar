@@ -1,8 +1,14 @@
 package com.example.bottombar.demobottombar
 
+import android.annotation.TargetApi
+import android.graphics.Color
+import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.annotation.RequiresApi
 import android.support.v4.app.Fragment
+import android.view.View
+import android.view.WindowManager
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), BottomBar.OnBottomTabClickListener {
@@ -37,10 +43,31 @@ class MainActivity : AppCompatActivity(), BottomBar.OnBottomTabClickListener {
         }
     }
 
+    //注解代表该函数需要的系统版本
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
+
+
+        //5.0版本之后，android提供的实现修改状态栏的颜色方法
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+            window.statusBarColor = resources.getColor(R.color.colorPrimary)
+        } else {
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+            var viewG = window.decorView
+            viewG.setBackgroundColor(Color.RED)
+        }
+
+
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         bottomBar.registerBottombarTabClickListener(this)
+
+
+        println("version = ${Build.VERSION.SDK_INT}")
+
 
         var drawableList = listOf<Int>(R.drawable.menu, R.drawable.message_icon, R.drawable.search, R.drawable.settings)
         bottomBar.setAllTabDrawableByCount(drawableList, 3)

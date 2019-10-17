@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+android:orientation="vertical">
 
     <TextView android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:gravity="center"
               android:text="第二页"
-    android:textSize="30sp"/>
+    android:textSize="30sp"
+    android:visibility="gone"/>
 
-</RelativeLayout>
+    <android.support.v7.widget.RecyclerView android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+    android:id="@+id/secondRecv">
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>
